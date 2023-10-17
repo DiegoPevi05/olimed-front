@@ -10,6 +10,11 @@
 }
 
 @font-face{
+  font-family:'GillSansItalic';
+  src:url('./assets/fonts/GillSans/Gill_Sans_Italic.otf') format('opentype');
+}
+
+@font-face{
   font-family:'Okemo';
   src:url('./assets/fonts/okemo/okemo.ttf') format('truetype');
 }

@@ -12,8 +12,10 @@ interface INavigation {
 
 const navigation:INavigation[] = [
   { name: 'Home',label:'Inicio', href: '/' },
+  { name: 'About', label:'Nosotros',href: '#about' },
+  { name: 'News', label:'Noticias',href: '#news' },
   { name: 'Products', label:'Productos',href: '/products' },
-  { name: 'ContactUs',label:'Contactanos', href: '/contactUs' }
+  { name: 'ContactUs',label:'Contactanos', href: '#contact' }
 ]
 
 const Navbar: FC = () => {
@@ -27,7 +29,7 @@ const Navbar: FC = () => {
 
 
   return(
-    <div className="fixed top-0 h-[50px] sm:h-[120px] w-full z-10 bg-white">
+    <div className="fixed top-0 h-[50px] sm:h-[120px] w-full z-10 bg-white drop-shadow-lg">
       <nav className="flex flex-row items-center w-full h-full px-8 sm:px-16 lg:px-24 ">
         <div className="flex justify-center items-center py-4 w-full lg:w-1/5">
           <a 
@@ -70,7 +72,7 @@ const Navbar: FC = () => {
         </div>
       </nav>
       <div 
-        className={`${ searchOpen ? 'block opacity-100' : 'block opacity-0' } absolute top-[50px] sm:top-[120px] w-full h-auto sm:h-[360px] bg-white transition-opacity ease-in-out duration-300 
+        className={`${ searchOpen ? 'block opacity-100 h-auto sm:h-[360px]' : 'block opacity-0 h-[0px]' } absolute top-[50px] sm:top-[120px] w-full  bg-white  transition-opacity ease-in-out duration-300 
         flex flex-col justify-center items-center py-4 gap-2`}>
           <button className="hidden sm:block absolute top-4 right-20" onClick={() => setSearchOpen(false)}><X className="w-10 h-10 text-primary hover:text-tertiary ease-in-out duration-300"/></button>
           <h1 className="hidden sm:block font-body text-primary text-4xl">Que estas buscando?</h1>

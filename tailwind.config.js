@@ -19,6 +19,7 @@ export default {
       fontFamily: {
         heading: ['GillSansHeavy','sans-serif'],
         body: ['GillSans','serif'],
+        bodyItalic: ['GillSansItalic','serif'],
       },
     },
   },
