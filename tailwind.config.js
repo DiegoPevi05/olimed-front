@@ -4,12 +4,10 @@ export default {
   theme: {
     extend: {
       colors:{
-        primary: "#1211CA",
-        secondary: "#F9B314",
-        tertiary: "#101010",
-        fourth: "#fff",
-        fifth: "#6669C6",
-        sixth: "#F1F1F0",
+        primary: "#99DBDC",
+        secondary: "#16355A",
+        tertiary: "#317C9F",
+        fourth: "#6e6e6e"
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
@@ -19,8 +17,8 @@ export default {
         xs: "450px",
       },
       fontFamily: {
-        heading: ['Montserrat-ExtraBold','sans-serif'],
-        body: ['Montserrat','serif'],
+        heading: ['GillSansHeavy','sans-serif'],
+        body: ['GillSans','serif'],
       },
     },
   },

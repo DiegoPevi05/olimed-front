@@ -1,8 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 @font-face{
-  font-family:'Montserrat-ExtraBold';
-  src:url('./assets/fonts/Montserrat-ExtraBold.ttf') format('truetype');
+  font-family:'GillSansHeavy';
+  src:url('./assets/fonts/GillSans/GillSans_Heavy.otf') format('opentype');
+}
+
+@font-face{
+  font-family:'GillSans';
+  src:url('./assets/fonts/GillSans/GillSans.otf') format('opentype');
+}
+
+@font-face{
+  font-family:'Okemo';
+  src:url('./assets/fonts/okemo/okemo.ttf') format('truetype');
 }
 
 
@@ -16,7 +25,7 @@
 @layer base {
   html {
     @apply font-body;
-    @apply bg-sixth;
+    @apply bg-white;
     @apply text-tertiary;
     scroll-behavior: smooth;
   }
