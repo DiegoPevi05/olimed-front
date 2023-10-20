@@ -46,7 +46,7 @@ const Contact:FC = () => {
           Authorization: import.meta.env.VITE_FORM_UATH_TOKEN
         },
         params:{
-          language:i18n.language
+          language:'es'
         }
       }
       await axios.post(import.meta.env.VITE_BACKEND_URL+"/api/send-email",form,config);

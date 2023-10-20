@@ -1,12 +1,10 @@
 import { useState,useEffect } from 'react';
 import {motion} from 'framer-motion';
-import { styles } from '../styles';
 import { staggerContainer, fadeIn } from "../lib/motions";
 import Link from '../components/ui/Link';
-import {Video1,Video2,Video3,Video4,Video5} from "../assets/videos";
-import { User,Instagram } from 'lucide-react';
+import {Video1,Video2,Video3} from "../assets/videos";
 
-const VideoCarousel = [Video1,Video2,Video3,Video4,Video5]
+const VideoCarousel = [Video1,Video2,Video3]
 
 
 const Hero = () => {
@@ -22,6 +20,7 @@ const Hero = () => {
 
   return(
       <motion.section 
+        id={"hero"}
         variants={staggerContainer()}
         initial='hidden'
         whileInView='show'
@@ -35,9 +34,7 @@ const Hero = () => {
                   <div className="w-screen h-[240px] sm:h-full">
                     <motion.video
                       key={index}
-                      type="video/mp4"
                       src={video}
-                      alt={"Video_"+index}
                       className="w-full h-full object-cover"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -57,7 +54,7 @@ const Hero = () => {
         >
           <h1 className="text-xl xl:text-2xl font-body text-white">Tenemos lo que necesitas</h1>
           <h1 className="text-2xl xl:text-3xl font-body mt-4 pr-4 ">Brindamos los mejores equipos medicos y farmaceuticos para tu empresa y para tus trabajadores</h1>
-          <Link href="#" variant="ghost2" className="mt-8">Ver Nuestros Productos</Link>
+          <Link href="/#products" variant="ghost2" className="mt-8">Ver Nuestros Productos</Link>
         </motion.div>
       </motion.section>
   )

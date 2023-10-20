@@ -1,117 +1,56 @@
-import { FC, useState,useEffect} from 'react';
+import { FC, useState} from 'react';
 import {BrandLogo,Logo} from '../assets/images';
 import { Menu, X, Search } from 'lucide-react';
 import { Dialog } from '@headlessui/react';
-// @ts-ignore
-import { Link as LinkScroll, animateScroll as scroll } from 'react-scroll';
 
 interface INavigation {
   name: string;
   label: string;
   href: string;
-  offset: number;
 }
 
 const navigation:INavigation[] = [
-  { name: 'Home',label:'Inicio', href: 'hero', offset:0 },
-  { name: 'News', label:'Noticias',href: 'news', offset:-80 },
-  { name: 'Products', label:'Productos',href: 'products',offset:-100 },
-  { name: 'About', label:'Nosotros',href: 'about',offset:0 },
-  { name: 'Contact', label:'Contactanos',href: 'contact',offset:-20 },
+  { name: 'Home',label:'Inicio', href: '/#' },
+  { name: 'News', label:'Noticias',href: '/#news' },
+  { name: 'Products', label:'Productos',href: '/#products' },
 ]
 
 const Navbar: FC = () => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
-  const [scrollNav, setScrollNav] = useState(true)
-
-  useEffect(() => {
-    window.addEventListener('scroll', changeNav);
-  }, [])
-
-  const changeNav = () => {
-    if (window.scrollY >= 120) {
-      setScrollNav(false)
-    } else {
-      setScrollNav(true)
-    }
-  }
 
   const ToogleSearchOpen = () => {
     setSearchOpen(!searchOpen);
   }
 
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
-
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleHover = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-
   return(
-    <div className={`${ scrollNav ? 'h-[50px] sm:h-[120px]' : 'h-[50px] sm:h-[50px] hover:h-[120px] ' } fixed top-0  w-full z-10 bg-white drop-shadow-lg transition-all ease-in-out duration-1000`} onMouseEnter={handleHover}
-      onMouseLeave={handleMouseLeave}>
-
+    <div className="fixed top-0 h-[50px] sm:h-[120px] w-full z-10 bg-white drop-shadow-lg">
       <nav className="flex flex-row items-center w-full h-full px-8 sm:px-16 lg:px-24 ">
         <div className="flex justify-center items-center py-4 w-full lg:w-1/5">
           <a 
-            onClick={scrollToTop}
+            href="/#"
             className="w-full h-full cursor-pointer">
-            <img src={BrandLogo} alt="logo" className={`${ scrollNav ? 'h-auto w-48 lg:w-64' : isHovered ? 'h-auto w-48 lg:w-64' : 'h-auto w-24' } hidden sm:block transition-all ease-in-out duration-1000 `} 
+            <img src={BrandLogo} alt="logo" className="hidden sm:block h-auto w-48 lg:w-64" 
             /> 
             <img src={Logo} alt="logo" className="block sm:hidden h-auto w-10 rounded-full" 
             /> 
           </a>
         </div>
         <ul className="hidden lg:flex flex-row justify-end items-center gap-12 w-4/5">
-          {scrollNav ?
-            <>
-              {navigation.map((item,index)=>(
-                <LinkScroll key={"Link_"+index} 
-                  to={item.href}
-                  offset={item.offset}
-                >
+          {navigation.map((item,index)=>(
+            <a key={"Link_"+index} 
+              href={item.href}
+            >
 
-                  <li key={"Link_"+item.name} className="mx-4 text-xl  font-body text-fourth hover:text-primary hover:underline ease-in-out duration-300 cursor-pointer">{item.label}</li>
-                </LinkScroll>
-              ))}
-              <div className="hidden lg:flex flex-row gap-4">
-                <button onClick={() => setSearchOpen(true)} className="p-0 mr-10">
-                  <Search className="text-primary hover:text-tertiary"/>
-                </button>
-              </div>
-            </>
-          :
-            isHovered ? 
-            <>
-              {navigation.map((item,index)=>(
-                <LinkScroll key={"Link_"+index} 
-                  to={item.href}
-                  offset={item.offset}
-                >
-
-                  <li key={"Link_"+item.name} className="mx-4 text-xl  font-body text-fourth hover:text-primary hover:underline ease-in-out duration-300 cursor-pointer">{item.label}</li>
-                </LinkScroll>
-              ))}
-              <div className="hidden lg:flex flex-row gap-4">
-                <button onClick={() => setSearchOpen(true)} className="p-0 mr-10">
-                  <Search className="text-primary hover:text-tertiary"/>
-                </button>
-              </div>
-            </>
-              :
-                  <Menu className="h-6 w-6 sm:h-10 sm:w-10 text-primary hover:text-secondary ease-in-out duration-300" aria-hidden="true" />
-          }
-
+              <li key={"Link_"+item.name} className="mx-4 text-xl  font-body text-fourth hover:text-primary hover:underline ease-in-out duration-300 cursor-pointer">{item.label}</li>
+            </a>
+          ))}
+          <div className="hidden lg:flex flex-row gap-4">
+            <button onClick={() => setSearchOpen(true)} className="p-0 mr-10">
+              <Search className="text-primary hover:text-tertiary"/>
+            </button>
+          </div>
         </ul>
         <div className="flex justify-end lg:hidden w-auto gap-4">
           <button onClick={() => ToogleSearchOpen()}>
@@ -170,14 +109,14 @@ const Navbar: FC = () => {
             <div className="-my-6">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <LinkScroll
+                  <a
                     key={item.name}
-                    to={item.href}
+                    href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-fifth text-lg font-semibold leading-7 hover:bg-gray-50"
                   >
                     {item.label}
-                  </LinkScroll>
+                  </a>
                 ))}
               </div>
             </div>

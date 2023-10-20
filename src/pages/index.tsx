@@ -1,9 +1,9 @@
-import { FC,useState, useEffect} from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import News from '../components/News';
 import Contact from '../components/ContactUs';
+import Products from '../components/Sections';
 
 
 const Home = () => {
@@ -12,6 +12,7 @@ const Home = () => {
         <Navbar/>
         <Hero/>
         <News/>
+        <Products/>
         <About/>
         <Contact/>
       </>

@@ -1,10 +1,9 @@
 import { useState} from 'react';
 import { motion } from "framer-motion";
-import { styles } from "../styles";
 import { SectionWrapper } from "../components/ui/hoc";
-import {  staggerContainer, textVariant,fadeIn } from "../lib/motions";
-import {Carousel} from "../assets/images";
+import {  staggerContainer,fadeIn } from "../lib/motions";
 import {ChevronLeftCircle, ChevronRightCircle} from "lucide-react";
+import {About_1,About_2,About_3} from "../assets/images"
 
 
 interface CardProps {
@@ -17,18 +16,18 @@ interface CardProps {
 const dataCards:CardProps[] = [
   {
     title:"Quienes somos?",
-    subtitle:"La mejor manera de encontrar nuestros producots",
-    image: Carousel
+    subtitle:"Somos una empresa peruana con más de siete años de experiencia en la comercialización, importación y distribución de productos farmacéuticos, medicamentos, materiales médicos y equipos de laboratorio.",
+    image: About_1
   },
   {
-    title:"Quienes somos2?",
-    subtitle:"La mejor manera de encontrar nuestros producots",
-    image: Carousel
+    title:"Nuestros Objetivos",
+    subtitle:"A lo largo de nuestra trayectoria hemos apostado por la calidad de los productos que comercializamos, las amplias alternativas de marcas y productos, tecnología de última generación, atención personalizada, asesoría técnica, stock permanente y eficiencia en la entrega a lo largo de todo el país. ",
+    image: About_3
   },
   {
-    title:"Quienes somos3?",
-    subtitle:"La mejor manera de encontrar nuestros producots",
-    image: Carousel
+    title:"Nuestro Trabajo",
+    subtitle:"Nuestros procesos demarcan el éxito de nuestro servicio. Nuestra infraestructura nos permite contar con un lugar apropiado para el almacenamiento de nuestros productos. Controlamos y monitoreamos los procedimientos de calidad y nuestro sistema de distribución para lograr eficiencia y seguridad. ",
+    image: About_2
   },
 ]
 
@@ -44,17 +43,17 @@ const Card = (props:CardProps) => {
       className="relative w-full h-full">
       <motion.div  
       variants={fadeIn("right", "tween", 0.2, 1)}
-        className="absolute h-[360px] w-[180px] sm:w-[380px] lg:w-[580px] right-[40%] -top-4 bg-primary drop-shadow-md">
-        <div className="h-full w-[120px] sm:w-[380px] flex flex-col flex-start p-5 sm:p-10">
-          <h1 className="block font-body text-whitre text-lg sm:text-xl mt-10 text-left">{title}</h1>
-          <h2 className="block font-body text-secondary text-sm sm:text-lg text-left">{subtitle}</h2>
+        className="sm:absolute h-auto sm:h-[360px] w-full sm:w-[380px] lg:w-[580px] right-[40%] -top-4 bg-primary drop-shadow-md">
+        <div className="h-full w-full sm:w-[380px] flex flex-col flex-start p-5 sm:p-10">
+          <h1 className="block font-body text-secondary text-lg sm:text-xl mt-10 text-left">{title}</h1>
+          <h2 className="block font-body text-white text-sm sm:text-lg text-left">{subtitle}</h2>
         </div>
       </motion.div>
             
       <motion.div 
       variants={fadeIn("left", "tween", 0.2, 1)}
-      className="absolute h-[360px] w-[580px] left-[40%] -bottom-4 bg-white drop-shadow-md overflow-hidden">
-        <img src={image} alt="img1" className="w-full h-full hover:scale-125 transition-transform ease-in-out duration-300 opacity-70"/>
+        className="sm:absolute h-[180px] sm:h-[360px] w-full sm:w-[580px] sm:left-[40%] sm:-bottom-4 bg-white drop-shadow-md overflow-hidden">
+        <img src={image} alt="img1" className="object-contain object-center w-full h-full hover:scale-125 transition-transform ease-in-out duration-300 opacity-70"/>
       </motion.div>
     </motion.section>
   )
@@ -62,7 +61,7 @@ const Card = (props:CardProps) => {
 
 const About = () => {
 
-  const [cardsData,setCardsData] = useState<CardProps[]>(dataCards);
+  const [cardsData] = useState<CardProps[]>(dataCards);
   const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
 
   const nextCard = () => {

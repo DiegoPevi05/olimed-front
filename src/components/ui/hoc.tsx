@@ -21,4 +21,3 @@ export const SectionWrapper = (Component:any, idName:string) =>
       </motion.section>
     );
   };
-
