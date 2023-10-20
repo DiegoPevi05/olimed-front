@@ -46,7 +46,7 @@ const Product = (props:ProductPropsCard) => {
 const ProductList = () => {
    const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
-  const category = queryParams.get('category');
+  const category:any = queryParams.get('category');
   const [Products] = useState<ProductProps[]>(productListData);
   const [FilteredProducts, setFilteredProducts] = useState<ProductProps[]>([]);
   const [FiltersProducts] = useState<FilterProductProps>(FilterProducLabels);
