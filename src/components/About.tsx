@@ -53,7 +53,7 @@ const Card = (props:CardProps) => {
       <motion.div 
       variants={fadeIn("left", "tween", 0.2, 1)}
         className="sm:absolute h-[180px] sm:h-[360px] w-full sm:w-[580px] sm:left-[40%] sm:-bottom-4 bg-white drop-shadow-md overflow-hidden">
-        <img src={image} alt="img1" className="object-contain object-center w-full h-full hover:scale-125 transition-transform ease-in-out duration-300 opacity-70"/>
+        <img src={image} alt="img1" className="object-cover object-center w-full h-full hover:scale-125 transition-transform ease-in-out duration-300 opacity-70"/>
       </motion.div>
     </motion.section>
   )

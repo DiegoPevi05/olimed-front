@@ -1,9 +1,39 @@
 import { ProductProps, FilterProductProps, newProps } from '../../lib/interfaces';
-import { ProductTest1, ProductTest2_1, ProductTest2_2,News_1, News_2, News_3  } from "../images";
+import { 
+  ProductTest1,
+  ProductTest2,
+  ProductTest3,
+  ProductTest4,
+  ProductTest5,
+  ProductTest6,
+  ProductTest7,
+  ProductTest8,
+  ProductTest9,
+  ProductTest10,
+  ProductTest11,
+  ProductTest12,
+  ProductTest13,
+  ProductTest14,
+  ProductTest15,
+  ProductTest16,
+  ProductTest17,
+  ProductTest18,
+  ProductTest19,
+  ProductTest20,
+  ProductTest21,
+  ProductTest22,
+  ProductTest23,
+  ProductTest24,
+  ProductTest25,
+  ProductTest26,
+  News_1,
+  News_2,
+  News_3,
+} from "../images";
 
 export const FilterProducLabels:FilterProductProps = {
   categories: ["Medicamentos","Ropa Descartable","Material Medico", "Materiales para Laboratorio"],
-  subcategories: ["inyectables","guantes"],
+  subcategories: ["Desinfección e Higiene","Guantes","Instrumentos de Medición","Material de Punción","Materiales e Instrumentación Quirurgicos", "Sondas y Drenajes","Material de Oxigenoterapia", "Vendajes","Set de Infusion"],
   labels: ["primeros auxilios","farmaceutica","emergencias"]
 }
 
@@ -11,49 +41,601 @@ export const productListData:ProductProps[] = [
   {
     id:1,
     category:"Material Medico",
-    subcategory:"inyectables",
+    subcategory:"Desinfección e Higiene",
     labels:["primeros auxilios","farmaceutica","emergencias"],
-    name:"Jeringas Polietileno",
-    characteristic:["jeringas"],
-    short_description:"Jeringa de Propiepileno",
-    description:"Guantes de Gaza para emergencias santiarias y todo tipo de emergencia",
+    name:"Desinfectantes Hospitalarios",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     table: [
       {
-        name:"Jeringa 100ml",
+        name:"Mascarilla KN95",
         brand:"Braun",
-        specifications:"Jeringa 100ml",
+        specifications:"Mascarilla con proteccion de 200micras",
       },
       {
-        name:"Jeringa 200ml",
+        name:"Mascarilla KN95",
         brand:"Braun",
-        specifications:"Jeringa 200ml",
-      },
-      {
-        name:"Jeringa 100ml",
-        brand:"Braun",
-        specifications:"Jeringa 200ml",
+        specifications:"Mascarilla con proteccion de 200micras",
       }
     ],
-    images:[ProductTest2_1, ProductTest2_2],
+    images:[ProductTest1],
   },
   {
     id:2,
-    category:"Ropa Descartable",
-    subcategory:"guantes",
-    labels:["farmaceutica","emergencias"],
-    name:"Guantes de Latex",
-    characteristic:["jeringas","Movil"],
-    short_description:"Guantes de Gaza para emergencias santiarias y todo tipo de emergencia",
-    description:"Guantes de Gaza para emergencias santiarias y todo tipo de emergencia",
-    table:[
+    category:"Medicamentos",
+    subcategory:"Desinfección e Higiene",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Yodopovidona",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
       {
-        name:"Guantes 200ml",
-        brand:"Monark",
-        specifications:"Guantes de Gaza para emergencias santiarias y todo tipo de emergencia",
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
       },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
     ],
-    images:[ProductTest1],
-  }
+    images:[ProductTest2],
+  },
+  {
+    id:3,
+    category:"Material Medico",
+    subcategory:"Desinfección e Higiene",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Productos Galénicos",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest3],
+  },
+  {
+    id:4,
+    category:"Material Medico",
+    subcategory:"Desinfección e Higiene",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Alcohol Gel",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest4],
+  },
+  {
+    id:5,
+    category:"Material Medico",
+    subcategory:"Guantes",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Guantes de Látex",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest5],
+  },
+  {
+    id:6,
+    category:"Material Medico",
+    subcategory:"Guantes",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Guantes Quirúrgicos Estériles",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest6],
+  },
+  {
+    id:7,
+    category:"Material Medico",
+    subcategory:"Guantes",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Guantes de Nitrilo",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest7],
+  },
+  {
+    id:8,
+    category:"Material Medico",
+    subcategory:"Instrumentos de Medición",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Glucómetros",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest8],
+  },
+  {
+    id:9,
+    category:"Material Medico",
+    subcategory:"Insumos Medicos",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Gasas",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest9],
+  },
+  {
+    id:10,
+    category:"Material Medico",
+    subcategory:"Insumos Medicos",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Esparadrapo Hipoalergénico",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest10],
+  },
+  {
+    id:11,
+    category:"Material Medico",
+    subcategory:"Insumos Medicos",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Papel Térmico para Ecografia",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest11],
+  },
+  {
+    id:12,
+    category:"Material Medico",
+    subcategory:"Insumos Medicos",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Termómetros",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest12],
+  },
+  {
+    id:13,
+    category:"Material Medico",
+    subcategory:"Material de Oxigenoterapia",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Máscaras de Oxígeno",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest13],
+  },
+  {
+    id:14,
+    category:"Material Medico",
+    subcategory:"Material de Punción",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Catéter Intravenoso",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest14],
+  },
+  {
+    id:15,
+    category:"Material Medico",
+    subcategory:"Material de Punción",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Jeringas y Agujas",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest15],
+  },
+  {
+    id:16,
+    category:"Material Medico",
+    subcategory:"Materiales e Instrumentación Quirurgicos",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Hojas de Bisturí",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest16],
+  },
+  {
+    id:17,
+    category:"Material Medico",
+    subcategory:"Materiales e Instrumentación Quirurgicos",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Instrumental Quirúrgico",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest17],
+  },
+  {
+    id:18,
+    category:"Material Medico",
+    subcategory:"Materiales e Instrumentación Quirurgicos",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Sistema de Drenaje de Heridas",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest18],
+  },
+  {
+    id:19,
+    category:"Material Medico",
+    subcategory:"Materiales e Instrumentación Quirurgicos",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Tubos Endotraqueales",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest19],
+  },
+  {
+    id:20,
+    category:"Materiales para Laboratorio",
+    subcategory:"Materiales para Laboratorio",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Frascos para Muestras",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest20],
+  },
+  {
+    id:21,
+    category:"Medicamentos",
+    subcategory:"Medicamentos",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Soluciones Inyectables",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest21],
+  },
+  {
+    id:22,
+    category:"Ropa Descartable",
+    subcategory:"Ropa Descartable",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Ropa Descartable Estéril y No Estéril",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest22],
+  },
+  {
+    id:23,
+    category:"Insumos Medicos",
+    subcategory:"Set de Infusion",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Equipo de Volutrol y Venoclisis",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest23],
+  },
+  {
+    id:24,
+    category:"Insumos Medicos",
+    subcategory:"Sondas y Drenajes",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Sondas Foley",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest24],
+  },
+  {
+    id:25,
+    category:"Insumos Medicos",
+    subcategory:"Sondas y Drenajes",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Bolsas Urinarias",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest25],
+  },
+  {
+    id:26,
+    category:"Insumos Medicos",
+    subcategory:"Vendajes",
+    labels:["primeros auxilios","farmaceutica","emergencias"],
+    name:"Vendas Elásticas",
+    characteristic:["Los respiradores N95 quirúrgicos están diseñados para reducir la exposición del usuario a los contaminantes biológicos", "Forman un sello apropiado sobre la boca y la nariz.", "Para lograr la efectividad deseada, se debe realizar una prueba de ajuste y se deben ajustar a la cara del usuario."],
+    short_description:"Mascarilla para Proteccion de bacterias",
+    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    table: [
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      },
+      {
+        name:"Mascarilla KN95",
+        brand:"Braun",
+        specifications:"Mascarilla con proteccion de 200micras",
+      }
+    ],
+    images:[ProductTest26],
+  },
 ]
 
 export const newsData:newProps[] = [

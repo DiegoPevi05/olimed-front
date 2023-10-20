@@ -18,32 +18,32 @@ const dataCards:CardProps[] = [
     title:"Medicamentos",
     subtitle:"¡Cuida de tu salud con nuestra amplia selección de medicamentos!",
     image: Section_1,
-    href:"/#products"
+    href:"/#products?category=0"
   },
   {
     title:"Ropa Descartable",
     subtitle:"Comodidad y protección en cada prenda desechable que ofrecemos",
     image: Section_2,
-    href:"/#products"
+    href:"/#products?category=1"
   },
   {
     title:"Material Medico",
     subtitle:"La calidad que los profesionales de la salud prefieren",
     image: Section_3,
-    href:"/#products"
+    href:"/#products?category=2"
   },
   {
     title:"Materiales para Laboratorio",
     subtitle:"Herramientas de precisión para investigadores y laboratorios de excelencia",
     image: Section_4,
-    href:"/#products"
+    href:"/#products?category=3"
   },
 ]
 
 
 
 const Card = (props:CardProps) => {
-  const {title,subtitle,image} = props
+  const {title,subtitle,image,href} = props
 
   const [isHovered, setIsHovered] = useState(false);
 
@@ -73,7 +73,7 @@ const Card = (props:CardProps) => {
           <img src={image} className={`${ isHovered ? 'opacity-30 blur-sm' : 'opacity-100' } absolute w-full h-full object-cover transition-opacity	 ease-in-out duration-700`}  />
           <h1  className={`${ isHovered ? 'opacity-100 translate-y-[0px]' : 'opacity-0 translate-y-[100px]' } block font-body text-lg sm:text-xl lg:mt-10 text-center transition-opacity	 ease-in-out duration-700 transition-transform`} >{title}</h1>
           <h2  className={`${ isHovered ? 'opacity-100 translate-y-[0px]' : 'opacity-0 translate-y-[100px]' } block font-body text-secondary text-sm sm:text-lg my-4 text-center transition-opacity	 ease-in-out duration-700 transition-transform`} >{subtitle}</h2>
-          <Link href="#" className={`${ isHovered ? 'opacity-100 translate-y-[0px]' : 'opacity-0 translate-y-[100px]' }  transition-opacity	 ease-in-out duration-700 transition-transform`}>Ir al Producto</Link>
+          <Link href={href} className={`${ isHovered ? 'opacity-100 translate-y-[0px]' : 'opacity-0 translate-y-[100px]' }  transition-opacity	 ease-in-out duration-700 transition-transform`}>Ir al Producto</Link>
         </div>
       </motion.div>
     </motion.section>

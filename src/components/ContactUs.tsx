@@ -53,6 +53,7 @@ const Contact:FC = () => {
       setForm(emptyData);
       toast.success("Mensaje enviado con éxito");
     } catch(error){
+      console.log(error)
       toast.error("No se ha podido enviar el mensaje");
     } finally{
       setLoading(false);

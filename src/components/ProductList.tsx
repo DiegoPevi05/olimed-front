@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { ProductProps, FilterProductProps } from "../lib/interfaces";
 import { productListData, FilterProducLabels } from "../assets/data";
 import { Menu, Transition } from '@headlessui/react'
+import { useLocation } from 'react-router-dom';
 
 interface ProductPropsCard extends ProductProps {
   index:number;
@@ -43,12 +44,21 @@ const Product = (props:ProductPropsCard) => {
 }
 
 const ProductList = () => {
+   const { search } = useLocation();
+  const queryParams = new URLSearchParams(search);
+  const category = queryParams.get('category');
   const [Products] = useState<ProductProps[]>(productListData);
   const [FilteredProducts, setFilteredProducts] = useState<ProductProps[]>([]);
   const [FiltersProducts] = useState<FilterProductProps>(FilterProducLabels);
   const [FilterApply,setFilterApply] = useState<FilterProductProps>({categories:[],subcategories:[],labels:[]}); 
   const [LoadingProductsState,setLoadingProductsState] = useState<boolean>(true);
 
+  useEffect(() =>{
+    if(category){
+      var value = FiltersProducts.categories[category];
+      setFilterApply(prevFilterApply => ({ ...prevFilterApply, categories: [...prevFilterApply.categories, value] }));
+    }
+  },[category])
 
   useEffect(() =>{
     if(FilterApply.categories.length > 0 || FilterApply.labels.length > 0){
@@ -303,7 +313,7 @@ const ProductList = () => {
           ))}
         </div>
 
-        <ul role="list" className="mx-4 flex flex-wrap max-w-2xl justify-center sm:justify-start items-center gap-12 px-4 sm:px-6 lg:max-w-5xl lg:px-8 py-4 mt-10 lg:py-8 w-full">
+        <ul role="list" className="mx-4 flex flex-wrap max-w-2xl justify-center sm:justify-start  gap-12 px-4 sm:px-6 lg:max-w-5xl lg:px-8 py-4 mt-10 lg:py-8 w-full">
           {LoadingProductsState ?
             <div className="w-full h-full flex justify-center items-center">
               <Loader2 className=' text-primary h-16 w-16 animate-spin' />
