@@ -7,6 +7,7 @@ import NewsList from './pages/newslist';
 import NewsDetail from './pages/newsDetail';
 import  LoadingComponent from './components/ui/Loader';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom';
+import './lib/i18n';
 
 
 function App() {

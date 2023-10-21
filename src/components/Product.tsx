@@ -49,6 +49,7 @@ const Product = () => {
             {product.images.map((image:any,index:any) => (
               index == selectedImage && (
                 <motion.section 
+                  key={"motion_section_image"+index}
                   variants={staggerContainer()}
                   initial='hidden'
                   whileInView='show'

@@ -6,6 +6,8 @@ import { ChevronLeftCircle, ChevronRightCircle} from "lucide-react";
 import { newProps } from '../lib/interfaces';
 import { newsData } from '../assets/data';
 import { NewCardDetail } from '../components/cards/news';
+import { useTranslation } from 'react-i18next';
+
 
 const News = () => {
 
@@ -13,6 +15,9 @@ const News = () => {
   const [currentIndex,setCurrentIndex] = useState<number>(0);
   const [NewsData] = useState<newProps[]>(newsData);
   const [ShowData,setShowData] = useState<newProps[]>([]);
+
+  const {  t } = useTranslation()
+
 
   // New function to update the number of cards based on screen width
   const updateNumberCards = () => {
@@ -67,8 +72,8 @@ const News = () => {
   return (
     <div className="relative">
       <div className="absolute top-5 w-full flex flex-col text-center">
-        <p className={styles.sectionSubText}>Tenemos ultimos acontecimientos sigue las noticias</p>
-        <h2 className={styles.sectionHeadText}>Sigue Nuestros ultimos aconteciemientos</h2>
+        <p className={styles.sectionSubText}>{t("Tenemos ultimos acontecimientos sigue las noticias")}</p>
+        <h2 className={styles.sectionHeadText}>{t("Sigue Nuestros ultimos aconteciemientos")}</h2>
       </div>
       <div className="w-full h-full flex flex-col md:flex-row items-center gap-0 sm:gap-4 overflow-hidden">
         <ChevronLeftCircle className={`${ currentIndex == 0 ? 'text-gray-300':'text-primary hover:text-secondary hover:translate-y-[-20px] ease-in-out duration-500 cursor-pointer'} hidden md:flex h-16 w-16`} onClick={()=>previousSlide()}/>

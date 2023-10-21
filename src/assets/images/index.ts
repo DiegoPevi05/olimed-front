@@ -1,13 +1,16 @@
 import Logo from './Logo.png';
 import BrandLogo from './BrandLogo.png';
-import Carousel from './carousel.jpg';
+import USAFLAG from './UsaFlag.svg'
+import PERUFLAG from './PeruFlag.svg'
+
 import MedicCare from './contact_us.svg';
 import Section_1 from './test/sections_1.jpg';
 import Section_2 from './test/sections_2.jpg';
 import Section_3 from './test/sections_3.jpg';
 import Section_4 from './test/sections_4.jpg';
+
 import News_1 from './test/news_1.jpg';
-import News_2 from './test/news_2.jpg';
+import News_2 from './test/news_2.png';
 import News_3 from './test/news_3.jpg';
 
 import About_1 from './test/about_1.jpg';
@@ -46,8 +49,10 @@ import ProductTest26 from './test/products/image26.jfif';
 export { 
   Logo,
   BrandLogo,
-  Carousel,
   MedicCare,
+
+  USAFLAG,
+  PERUFLAG,
 
   ProductTest1,
   ProductTest2,

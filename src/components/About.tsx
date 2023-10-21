@@ -4,6 +4,7 @@ import { SectionWrapper } from "../components/ui/hoc";
 import {  staggerContainer,fadeIn } from "../lib/motions";
 import {ChevronLeftCircle, ChevronRightCircle} from "lucide-react";
 import {About_1,About_2,About_3} from "../assets/images"
+import { useTranslation } from 'react-i18next';
 
 
 interface CardProps {
@@ -34,6 +35,8 @@ const dataCards:CardProps[] = [
 
 
 const Card = (props:CardProps) => {
+
+  const {  t } = useTranslation()
   const {title,subtitle,image} = props
   return(
     <motion.section 
@@ -45,8 +48,8 @@ const Card = (props:CardProps) => {
       variants={fadeIn("right", "tween", 0.2, 1)}
         className="sm:absolute h-auto sm:h-[360px] w-full sm:w-[380px] lg:w-[580px] right-[40%] -top-4 bg-primary drop-shadow-md">
         <div className="h-full w-full sm:w-[380px] flex flex-col flex-start p-5 sm:p-10">
-          <h1 className="block font-body text-secondary text-lg sm:text-xl mt-10 text-left">{title}</h1>
-          <h2 className="block font-body text-white text-sm sm:text-lg text-left">{subtitle}</h2>
+          <h1 className="block font-body text-secondary text-lg sm:text-xl mt-10 text-left">{t(title)}</h1>
+          <h2 className="block font-body text-white text-sm sm:text-lg text-left">{t(subtitle)}</h2>
         </div>
       </motion.div>
             
@@ -64,6 +67,8 @@ const About = () => {
   const [cardsData] = useState<CardProps[]>(dataCards);
   const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
 
+  const {  t } = useTranslation()
+
   const nextCard = () => {
     setCurrentCardIndex((prevIndex) => prevIndex < cardsData.length - 1 ? prevIndex + 1 : cardsData.length - 1);
   };
@@ -76,8 +81,8 @@ const About = () => {
   return (
     <>
       <div className="w-full h-screen flex flex-col justify-center items-center text-center overflow-hidden">
-        <h1 className="block font-body text-primary text-lg sm:text-4xl">Lo mejor de Nuestra Empresa</h1>
-        <h2 className="block font-body text-secondary text-md sm:text-3xl">Impulsamos el progreso en el cuidado de la salud?</h2>
+        <h1 className="block font-body text-primary text-lg sm:text-4xl">{t("Lo mejor de Nuestra Empresa")}</h1>
+        <h2 className="block font-body text-secondary text-md sm:text-3xl">{t("Impulsamos el progreso en el cuidado de la salud?")}</h2>
           <div
             className='w-full h-1/2 flex items-center justify-center mt-10 '
           >

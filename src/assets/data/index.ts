@@ -31,6 +31,11 @@ import {
   News_3,
 } from "../images";
 
+export const LANGUAGES = [
+    { label: 'Español', code: 'es' },
+    { label: 'Ingles', code: 'en' }
+]
+
 export const FilterProducLabels:FilterProductProps = {
   categories: ["Medicamentos","Ropa Descartable","Material Medico", "Materiales para Laboratorio"],
   subcategories: ["Desinfección e Higiene","Guantes","Instrumentos de Medición","Material de Punción","Materiales e Instrumentación Quirurgicos", "Sondas y Drenajes","Material de Oxigenoterapia", "Vendajes","Set de Infusion"],
@@ -655,7 +660,7 @@ export const newsData:newProps[] = [
   {
     id:2,
     header:"MEDICA Düsseldorf (Alemania) - Foro Mundial de la Medicina",
-    subHeader:"Feria Médica Nº1 mundial. ",
+    subHeader:"Feria Médica Nº1 mundial",
     preview:"MEDICA es la feria comercial líder mundial para el sector médico donde se presentan las últimas novedades en tecnología médica y que año tras año atrae a miles de visitantes de todo el mundo.",
     body:"MEDICA es la feria comercial líder mundial para el sector médico donde se presentan las últimas novedades en tecnología médica, diagnóstico por imagen, tecnologías de la información, equipos de laboratorio y diagnóstico, equipos de fisioterapia y productos médicos y que año tras año atrae a miles de visitantes de todo el mundo. Con más de 6.000 expositores de 70 países y visitantes de todo el mundo, MEDICA es una de las mayores ferias médicas mundiales que desde hace más de 40 años está establecida firmemente en el calendario de todos los expertos. MEDICA se celebra de forma simultánea con COMPAMED, feria líder del sector de proveedores de tecnología médica que ofrecen una amplia gama de componentes de tecnología médica, servicios y equipos de producción de alta calidad para la industria médica. El amplio Programa de Foros y Conferencias de primer nivel que se presentan en MEDICA/COMPAMED ofrecen el complemento perfecto para conocer las últimas novedades y tendencias del sector médico. MEDICA como feria más importante de la industria sanitaria y la tecnología médica en todo el mundo ofrece la oportunidad de descubrir los últimos productos y tecnologías del sector, aprender de los expertos para conocer los últimos avances y tendencias y establecer nuevos contactos comerciales relacionándose con otros profesionales del sector.",
     imagen:News_2,
@@ -670,7 +675,7 @@ export const newsData:newProps[] = [
     header:"CMEF: Feria Internacional de Equipamiento Médico de China.",
     subHeader:"Novedades 2023",
     preview:"CMEF es una exposición de equipamiento médico que conecta marcas internacionales con profesionales de la salud y distribuidores globales, facilitando la presentación de productos innovadores y colaboraciones en la fabricación y regulación de equipos médicos.",
-    body:" La Feria Internacional de Equipamiento Médico de China (CMEF), una exposición de equipamiento médico, reúne a marcas internacionales de equipamiento médico para conectar con distribuidores, revendedores, fabricantes, médicos, reguladores y agencias gubernamentales con licencia a nivel global. Muestra productos y soluciones innovadoras recién llegados al mercado mundial, establece asociaciones con distribuidores locales e internacionales, colabora en la fabricación en el sudeste asiático y más allá, aprende cómo navegar la complejidad del mercado regulado y amplía tu red de contactos a través de nuestro servicio de conserjería de reuniones en línea y presenciales en CMEF.",
+    body:"La Feria Internacional de Equipamiento Médico de China (CMEF), una exposición de equipamiento médico, reúne a marcas internacionales de equipamiento médico para conectar con distribuidores, revendedores, fabricantes, médicos, reguladores y agencias gubernamentales con licencia a nivel global. Muestra productos y soluciones innovadoras recién llegados al mercado mundial, establece asociaciones con distribuidores locales e internacionales, colabora en la fabricación en el sudeste asiático y más allá, aprende cómo navegar la complejidad del mercado regulado y amplía tu red de contactos a través de nuestro servicio de conserjería de reuniones en línea y presenciales en CMEF.",
     imagen:News_3,
     href:"/#news",
     external_news:"https://www.cmef.com.cn/en",

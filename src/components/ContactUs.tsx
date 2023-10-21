@@ -7,6 +7,7 @@ import { slideIn } from "../lib/motions";
 import {toast} from "react-hot-toast";
 import Button from './ui/Button';
 import axios from "axios";
+import { useTranslation } from 'react-i18next';
 
 interface FormProps {
   name:string;
@@ -17,6 +18,8 @@ interface FormProps {
 const Contact:FC = () => {
 
   const [Loading, setLoading] = useState<boolean>(false);
+
+  const { i18n, t } = useTranslation()
 
   const emptyData:FormProps = {
     name:"",
@@ -46,15 +49,15 @@ const Contact:FC = () => {
           Authorization: import.meta.env.VITE_FORM_UATH_TOKEN
         },
         params:{
-          language:'es'
+          language:i18n.language
         }
       }
       await axios.post(import.meta.env.VITE_BACKEND_URL+"/api/send-email",form,config);
       setForm(emptyData);
-      toast.success("Mensaje enviado con éxito");
+      toast.success(t("Mensaje enviado con éxito"));
     } catch(error){
       console.log(error)
-      toast.error("No se ha podido enviar el mensaje");
+      toast.error(t("No se ha podido enviar el mensaje"));
     } finally{
       setLoading(false);
     }
@@ -69,45 +72,45 @@ const Contact:FC = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className='w-full md:w-1/2  p-4 sm:p-8 rounded-2xl'
       >
-        <p className={styles.sectionSubText}>Informacion</p>
-        <h2 className={styles.sectionHeadText}>Contactanos</h2>
+        <p className={styles.sectionSubText}>{t("Informacion")}</p>
+        <h2 className={styles.sectionHeadText}>{t("Contactanos")}</h2>
         <div
           className='mt-0 flex flex-col gap-2 sm:gap-8 w-full'
         >
           <div className='flex flex-col'>
-            <span className='font-heading font-small sm:text-lg mb-2 sm:mb-4'>Nombre</span>
+            <span className='font-heading font-small sm:text-lg mb-2 sm:mb-4'>{t("Nombre")}</span>
             <input
               type='text'
               name='name'
               value={form.name}
               onChange={handleChange}
-              placeholder={"Cual es tu nombre?"}
+              placeholder={t("Cual es tu nombre?")}
               className='bg-primary py-2 sm:py-4 px-6 text-secondary placeholder:text-white rounded-lg font-small sm:font-medium
                 transition-color focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
               '
             />
           </div>
           <div className='flex flex-col'>
-            <span className='font-heading font-small sm:text-lg mb-2 sm:mb-4'>Correo Electronico</span>
+            <span className='font-heading font-small sm:text-lg mb-2 sm:mb-4'>{t("Correo Electronico")}</span>
             <input
               type='email'
               name='email'
               value={form.email}
               onChange={handleChange}
-              placeholder={"Cual es tu correo?"}
+              placeholder={t("Cual es tu correo?")}
               className='bg-primary py-2 sm:py-4 px-6 text-secondary placeholder:text-white rounded-lg font-small sm:text-lg 
                 transition-color focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
               '
             />
           </div>
           <div className='flex flex-col'>
-            <span className='font-heading font-small sm:text-lg mb-2 sm:mb-4'>Mensaje</span>
+            <span className='font-heading font-small sm:text-lg mb-2 sm:mb-4'>{t("Mensaje")}</span>
             <textarea
               rows={7}
               name='message'
               value={form.message}
               onChange={handleChange}
-              placeholder={"Que nos quieres decir?"}
+              placeholder={t("Que nos quieres decir?")}
               className='bg-primary py-2 sm:py-4 px-6 text-secondary placeholder:text-white rounded-lg font-small sm:text-lg 
                 transition-color focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
               '
@@ -119,7 +122,7 @@ const Contact:FC = () => {
             className="text-lg"
             onClick={handleSubmit}
           >
-            Enviar
+            {t("Enviar")}
           </Button>
         </div>
       </motion.div>
@@ -130,7 +133,7 @@ const Contact:FC = () => {
       >
           <motion.img
             src={MedicCare}
-            alt="BirthdayCake"
+            alt="MedicSVG"
             className="w-full h-[140px] sm:h-[180px] lg:h-auto object-contain"
           />
       </motion.div>

@@ -3,6 +3,7 @@ import {motion} from 'framer-motion';
 import { staggerContainer, fadeIn } from "../lib/motions";
 import Link from '../components/ui/Link';
 import {Video1,Video2,Video3} from "../assets/videos";
+import { useTranslation } from 'react-i18next';
 
 const VideoCarousel = [Video1,Video2,Video3]
 
@@ -10,6 +11,10 @@ const VideoCarousel = [Video1,Video2,Video3]
 const Hero = () => {
 
   const [CurrentVideo, setCurrentVideo] = useState(0);
+
+
+  const {  t } = useTranslation()
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,7 +36,7 @@ const Hero = () => {
             {VideoCarousel.map((video, index) => {
               if (index === CurrentVideo) {
                 return(
-                  <div className="w-screen h-[240px] sm:h-full">
+                  <div key={"motion_video"+index} className="w-screen h-[240px] sm:h-full">
                     <motion.video
                       key={index}
                       src={video}
@@ -52,9 +57,9 @@ const Hero = () => {
           className="relative lg:absolute lg:left-24 lg:bottom-24 h-1/2 lg:h-96 w-full lg:w-[480px] bg-primary
           flex flex-col p-10 xl:pt-20"
         >
-          <h1 className="text-xl xl:text-2xl font-body text-white">Tenemos lo que necesitas</h1>
-          <h1 className="text-2xl xl:text-3xl font-body mt-4 pr-4 ">Brindamos los mejores equipos medicos y farmaceuticos para tu empresa y para tus trabajadores</h1>
-          <Link href="/#products" variant="ghost2" className="mt-8">Ver Nuestros Productos</Link>
+          <h1 className="text-xl xl:text-2xl font-body text-white">{t("Tenemos lo que necesitas")}</h1>
+          <h1 className="text-2xl xl:text-3xl font-body mt-4 pr-4 ">{t("Brindamos los mejores equipos medicos y farmaceuticos para tu empresa y para tus trabajadores")}</h1>
+          <Link href="/#products" variant="ghost2" className="mt-8">{t("Ver Nuestros Productos")}</Link>
         </motion.div>
       </motion.section>
   )

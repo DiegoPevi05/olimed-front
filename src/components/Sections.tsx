@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import {  staggerContainer,fadeIn } from "../lib/motions";
 import {Section_1,Section_2,Section_3,Section_4} from "../assets/images";
 import Link  from "../components/ui/Link";
+import { useTranslation } from 'react-i18next';
 
 
 interface CardProps {
@@ -45,6 +46,8 @@ const dataCards:CardProps[] = [
 const Card = (props:CardProps) => {
   const {title,subtitle,image,href} = props
 
+  const { t } = useTranslation()
+
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -71,9 +74,9 @@ const Card = (props:CardProps) => {
       >
         <div className="relative h-full w-full flex flex-col justify-center items-center p-5 sm:p-10">
           <img src={image} className={`${ isHovered ? 'opacity-30 blur-sm' : 'opacity-100' } absolute w-full h-full object-cover transition-opacity	 ease-in-out duration-700`}  />
-          <h1  className={`${ isHovered ? 'opacity-100 translate-y-[0px]' : 'opacity-0 translate-y-[100px]' } block font-body text-lg sm:text-xl lg:mt-10 text-center transition-opacity	 ease-in-out duration-700 transition-transform`} >{title}</h1>
-          <h2  className={`${ isHovered ? 'opacity-100 translate-y-[0px]' : 'opacity-0 translate-y-[100px]' } block font-body text-secondary text-sm sm:text-lg my-4 text-center transition-opacity	 ease-in-out duration-700 transition-transform`} >{subtitle}</h2>
-          <Link href={href} className={`${ isHovered ? 'opacity-100 translate-y-[0px]' : 'opacity-0 translate-y-[100px]' }  transition-opacity	 ease-in-out duration-700 transition-transform`}>Ir al Producto</Link>
+          <h1  className={`${ isHovered ? 'opacity-100 translate-y-[0px]' : 'opacity-0 translate-y-[100px]' } block font-body text-lg sm:text-xl lg:mt-10 text-center transition-opacity	 ease-in-out duration-700 transition-transform`} >{t(title)}</h1>
+          <h2  className={`${ isHovered ? 'opacity-100 translate-y-[0px]' : 'opacity-0 translate-y-[100px]' } block font-body text-secondary text-sm sm:text-lg my-4 text-center transition-opacity	 ease-in-out duration-700 transition-transform`} >{t(subtitle)}</h2>
+          <Link href={href} className={`${ isHovered ? 'opacity-100 translate-y-[0px]' : 'opacity-0 translate-y-[100px]' }  transition-opacity	 ease-in-out duration-700 transition-transform`}>{t("Ir al Producto")}</Link>
         </div>
       </motion.div>
     </motion.section>

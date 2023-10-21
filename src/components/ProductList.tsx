@@ -7,6 +7,7 @@ import { ProductProps, FilterProductProps } from "../lib/interfaces";
 import { productListData, FilterProducLabels } from "../assets/data";
 import { Menu, Transition } from '@headlessui/react'
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface ProductPropsCard extends ProductProps {
   index:number;
@@ -14,6 +15,7 @@ interface ProductPropsCard extends ProductProps {
 
 const Product = (props:ProductPropsCard) => {
   const {index,id,name,short_description,images} = props;
+  const {  t } = useTranslation()
   return(
       <motion.div
         key={"card_"+index}
@@ -35,7 +37,7 @@ const Product = (props:ProductPropsCard) => {
             <p className='text-secondary text-center font-body text-[13px] my-2'>
               {short_description}
             </p>
-            <Link to={`/products/${id}`} state={{productDetail: props}} className="active:scale-95 inline-flex items-center justify-center rounded-full text-sm font-medium transition-color focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer ease-in-out duration-300  bg-primary text-white hover:bg-tertiary h-10 py-2 px-4">Ver Producto</Link>
+            <Link to={`/products/${id}`} state={{productDetail: props}} className="active:scale-95 inline-flex items-center justify-center rounded-full text-sm font-medium transition-color focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer ease-in-out duration-300  bg-primary text-white hover:bg-tertiary h-10 py-2 px-4">{t("Ver Producto")}</Link>
           </div>
         </div>
 
@@ -44,7 +46,8 @@ const Product = (props:ProductPropsCard) => {
 }
 
 const ProductList = () => {
-   const { search } = useLocation();
+  const {  t } = useTranslation()
+  const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
   const category:any = queryParams.get('category');
   const [Products] = useState<ProductProps[]>(productListData);
@@ -61,7 +64,7 @@ const ProductList = () => {
   },[category])
 
   useEffect(() =>{
-    if(FilterApply.categories.length > 0 || FilterApply.labels.length > 0){
+    if(FilterApply.categories.length > 0 || FilterApply.subcategories.length > 0 || FilterApply.labels.length > 0){
       // Filter the products based on FilterApply
       const filteredProducts = Products.filter(product => {
 
@@ -145,14 +148,14 @@ const ProductList = () => {
         <li key={"Breadcrumb_home"}>
           <div className="flex items-center">
             <a href="/#" className="mr-2 text-sm font-medium text-fourth hover:text-primary">
-              Inicio 
+              {t("Inicio")} 
             </a>
             <ChevronRight className="text-primary "/>
           </div>
         </li>
         <li className="text-sm">
           <a href="/#products" aria-current="page" className="font-medium text-fourth hover:text-primary">
-            Productos
+            {t("Productos")} 
           </a>
         </li>
       </ol>
@@ -160,7 +163,7 @@ const ProductList = () => {
       <Menu as="div" className="w-full flex lg:hidden justify-end relative inline-block text-left right-10">
               <div>
                 <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-secondary shadow-sm ring-1 ring-inset ring-cyan-300 hover:bg-gray-50">
-                   Filtros
+                  {t("Filtros")}
                   <ChevronDown className="-mr-1 h-5 w-5 text-cyan-400" aria-hidden="true" />
                 </Menu.Button>
               </div>
@@ -174,15 +177,15 @@ const ProductList = () => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute right-0 z-10 mt-2 w-56 top-6 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items as="div" className="absolute right-0 z-10 mt-2 w-56 top-6 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div className="py-4">
 
                     <div className="flex flex-row w-full justify-end">
                       <button onClick={()=>cleanFilter()}><FilterX className="text-primary mr-4"/></button>
                     </div>
-                    <legend className="font-heading text-secondary leading-6 mt-2 ml-4">Categorias</legend>
+                    <legend className="font-heading text-secondary leading-6 mt-2 ml-4"> {t("Categorias")} </legend>
                     {FiltersProducts.categories.length > 0 && FiltersProducts.categories.map((category,index) => (
-                      <Menu.Item>
+                      <Menu.Item key={"category_item_"+index}>
                         <div className="relative flex gap-x-3 mx-6">
                           <div className="flex h-6 items-center">
                             <input 
@@ -200,9 +203,9 @@ const ProductList = () => {
                         </div>
                       </Menu.Item>
                     ))}
-                    <legend className="font-heading text-secondary leading-6 mt-2 ml-4">Sub-Categorias</legend>
+                    <legend className="font-heading text-secondary leading-6 mt-2 ml-4">{t("Sub-Categorias")}</legend>
                     {FiltersProducts.subcategories.length > 0 && FiltersProducts.subcategories.map((subcategory,index) => (
-                      <Menu.Item>
+                      <Menu.Item key={"subcategories_item_"+index}>
                         <div className="relative flex gap-x-3 mx-6">
                           <div className="flex h-6 items-center">
                             <input 
@@ -220,9 +223,9 @@ const ProductList = () => {
                         </div>
                       </Menu.Item>
                     ))}
-                    <legend className="font-heading text-secondary leading-6 mt-2 ml-4">Etiquetas</legend>
+                    <legend className="font-heading text-secondary leading-6 mt-2 ml-4">{t("Etiquetas")}</legend>
                     {FiltersProducts.labels.length > 0 && FiltersProducts.labels.map((label,index) => (
-                      <Menu.Item>
+                      <Menu.Item key={"labels_item_"+index}>
                         <div className="relative flex gap-x-3 mx-6">
                           <div className="flex h-6 items-center">
                             <input 
@@ -248,12 +251,12 @@ const ProductList = () => {
 
         <div className="hidden lg:flex flex-col w-[200px] h-full rounded-[20px] px-8 py-4 lg:min-w-2xl mt-10 shadow-lg">
           <div className="flex flex-row w-full justify-between">
-            <legend className="font-heading text-primary leading-2">Filtros</legend> 
+            <legend className="font-heading text-primary leading-2">{t("Filtros")}</legend> 
             <button onClick={()=>cleanFilter()}><FilterX className="text-primary"/></button>
           </div>
-          <legend className="font-heading text-secondary leading-6 mt-2">Categorias</legend>
+          <legend className="font-heading text-secondary leading-6 mt-2">{t("Categorias")}</legend>
           {FiltersProducts.categories.length > 0 && FiltersProducts.categories.map((category,index) => (
-            <div className="mt-2 space-y-6">
+            <div key={"categories_filter_"+index} className="mt-2 space-y-6">
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input 
@@ -271,9 +274,9 @@ const ProductList = () => {
               </div>
             </div>
           ))}
-          <legend className="font-heading text-secondary leading-6 mt-2">Sub-Categorias</legend>
+          <legend className="font-heading text-secondary leading-6 mt-2">{t("Sub-Categorias")}</legend>
           {FiltersProducts.subcategories.length > 0 && FiltersProducts.subcategories.map((subcategory,index) => (
-            <div className="mt-2 space-y-6">
+            <div key={"subcategories_filter_"+index} className="mt-2 space-y-6">
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input 
@@ -291,9 +294,9 @@ const ProductList = () => {
               </div>
             </div>
           ))}
-          <legend className="font-heading text-secondary leading-6 mt-2">Etiquetas</legend>
+          <legend className="font-heading text-secondary leading-6 mt-2">{t("Etiquetas")}</legend>
           {FiltersProducts.labels.length > 0 && FiltersProducts.labels.map((label,index) => (
-            <div className="mt-2 space-y-6">
+            <div key={"labels_filter_"+index} className="mt-2 space-y-6">
               <div className="relative flex gap-x-3">
                 <div className="flex h-6 items-center">
                   <input 
