@@ -26,7 +26,7 @@ const Product = () => {
         <li key={"Breadcrumb_home"}>
           <div className="flex items-center">
             <a href="/#" className="mr-2 text-sm font-medium text-fourth hover:text-primary">
-              Inicio 
+              {t("Inicio")} 
             </a>
             <ChevronRight className="text-primary "/>
           </div>
