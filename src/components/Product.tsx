@@ -3,12 +3,15 @@ import { ChevronRight} from "lucide-react";
 import {  staggerContainer,fadeIn } from "../lib/motions";
 import { motion } from "framer-motion";
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 
 const Product = () => {
 
   const location = useLocation();
   const product = location.state.productDetail;
+
+  const {  t } = useTranslation()
 
   const [selectedImage,setSelectedImage] = useState<number>(0);
 
@@ -31,14 +34,14 @@ const Product = () => {
         <li className="text-sm">
           <div className="flex items-center">
             <a href="/#products" aria-current="page" className="font-medium text-fourth hover:text-primary">
-              Productos
+              {t("Productos")}
             </a>
               <ChevronRight className="text-primary "/>
           </div>
         </li>
         <li className="text-sm">
           <span  aria-current="page" className="font-medium text-fourth hover:text-primary cursor-pointer">
-            {product.name}
+            {t(product.name)}
           </span>
         </li>
       </ol>
@@ -63,6 +66,7 @@ const Product = () => {
 
               )
             ))}
+            <span className="text-sm">{t("Las imagenes son referenciales")}</span>
             <ul className="w-full flex flex-row justify-center items-center gap-4 mt-4">
               {product.images.map((_:any,index:any) => (
                 <li key={"bullet_"+index}>
@@ -73,63 +77,65 @@ const Product = () => {
             </ul>
           </div>
           <div className="py-10 lg:col-span-2 lg:col-start-2 lg:border-l lg:border-primary lg:pb-16 lg:pl-8 lg:pt-6">
-            <h1 className="text-2xl font-bold tracking-tight sm:text-3xl text-primary">{product.name}</h1>
+            <h1 className="text-2xl font-bold tracking-tight sm:text-3xl text-primary">{t(product.name)}</h1>
             <div>
-              <h3 className="sr-only">Description</h3>
+              <h3 className="sr-only">{t("Descripcion") }</h3>
 
               <div className="space-y-6 mt-2">
-                <p className="text-base text-tertiary text-wrap">{product.description}</p>
+                <p className="text-base text-tertiary text-wrap">{t(product.description)}</p>
               </div>
             </div>
 
             <div className="mt-5">
-              <h3 className="text-sm font-medium text-secondary">Caracteristicas</h3>
+              <h3 className="text-sm font-medium text-secondary">{t("Caracteristicas")}</h3>
 
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
                   {product.characteristic.map((characteristic:any) => (
                     <li key={characteristic} className="text-secondary">
-                      <span className="text-tertiary">{characteristic}</span>
+                      <span className="text-tertiary">{t(characteristic)}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
 
-            <div className="mt-5">
-              <h2 className="text-sm font-medium text-secondary">Detalles</h2>
-              <div className="mt-4 space-y-6">
-                  <table className="w-full text-sm text-left border-collapse border border-slate-400">
-                    <thead>
-                      <tr>
-                        <th className=" border border-slate-300 pl-4 w-1/4">Nombre</th>
-                        <th className=" border border-slate-300 pl-4 w-1/4">Marca</th>
-                        <th className=" border border-slate-300 pl-4 w-2/4">Especificaciones</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {product.table.map((item_table:any,index:any) => (
-                        <tr key={"product_"+product.id + "_"+index}>
-                          <td className="border border-slate-300 pl-4 w-1/4">{item_table.name}</td>
-                          <td className="border border-slate-300 pl-4 w-1/4">{item_table.brand}</td>
-                          <td className="border border-slate-300 pl-4 w-2/4 pr-1">
-                              {item_table.specifications}
-                          </td>
+            {product.table.length > 0 && (
+              <div className="mt-5">
+                <h2 className="text-sm font-medium text-secondary">{t("Detalles")}</h2>
+                <div className="mt-4 space-y-6">
+                    <table className="w-full text-sm text-left border-collapse border border-slate-400">
+                      <thead>
+                        <tr>
+                          <th className=" border border-slate-300 pl-4 w-1/4">Nombre</th>
+                          <th className=" border border-slate-300 pl-4 w-1/4">Marca</th>
+                          <th className=" border border-slate-300 pl-4 w-2/4">Especificaciones</th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        {product.table.map((item_table:any,index:any) => (
+                          <tr key={"product_"+product.id + "_"+index}>
+                            <td className="border border-slate-300 pl-4 w-1/4">{t(item_table.name)}</td>
+                            <td className="border border-slate-300 pl-4 w-1/4">{t(item_table.brand)}</td>
+                            <td className="border border-slate-300 pl-4 w-2/4 pr-1">
+                                {t(item_table.specifications)}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="mt-5">
-              <h3 className="text-sm font-medium text-secondary">Etiquetas</h3>
+              <h3 className="text-sm font-medium text-secondary">{t("Etiquetas")}</h3>
 
               <div className="mt-4">
                 <div  className="flex flex-row flex-wrap gap-2">
                   {product.labels.map((label:any) => (
                     <div key={label} className="text-secondary bg-cyan-100 rounded-[20px] py-1 px-2 text-sm">
-                      <span className="text-secondary">#{label}</span>
+                      <span className="text-secondary">#{t(label)}</span>
                     </div>
                   ))}
                 </div>

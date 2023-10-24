@@ -32,10 +32,10 @@ const Product = (props:ProductPropsCard) => {
           />
           <div className="flex flex-col items-center mt-20 px-8">
             <h4 className="text-center text-primary text-[16px] font-bold">
-              {name}
+              {t(name)}
             </h4>
             <p className='text-secondary text-center font-body text-[13px] my-2'>
-              {short_description}
+              {t(short_description)}
             </p>
             <Link to={`/products/${id}`} state={{productDetail: props}} className="active:scale-95 inline-flex items-center justify-center rounded-full text-sm font-medium transition-color focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer ease-in-out duration-300  bg-primary text-white hover:bg-tertiary h-10 py-2 px-4">{t("Ver Producto")}</Link>
           </div>
@@ -198,7 +198,7 @@ const ProductList = () => {
                             />
                           </div>
                           <div className="text-body leading-6">
-                            <label htmlFor={"category_"+index} className="font-body text-tertiary text-sm">{category}</label>
+                            <label htmlFor={"category_"+index} className="font-body text-tertiary text-sm">{t(category)}</label>
                           </div>
                         </div>
                       </Menu.Item>
@@ -218,7 +218,7 @@ const ProductList = () => {
                             />
                           </div>
                           <div className="text-body leading-6">
-                            <label htmlFor={"subcategory_"+index} className="font-body text-tertiary text-sm">{subcategory}</label>
+                            <label htmlFor={"subcategory_"+index} className="font-body text-tertiary text-sm">{t(subcategory)}</label>
                           </div>
                         </div>
                       </Menu.Item>
@@ -238,7 +238,7 @@ const ProductList = () => {
                             />
                           </div>
                           <div className="text-body leading-6">
-                            <label htmlFor={"label_"+index} className="font-body text-tertiary text-sm">{label}</label>
+                            <label htmlFor={"label_"+index} className="font-body text-tertiary text-sm">{t(label)}</label>
                           </div>
                         </div>
                       </Menu.Item>
@@ -269,7 +269,7 @@ const ProductList = () => {
                   />
                 </div>
                 <div className="text-body leading-6">
-                  <label htmlFor={"category_"+index} className="font-body text-tertiary text-sm">{category}</label>
+                  <label htmlFor={"category_"+index} className="font-body text-tertiary text-sm">{t(category)}</label>
                 </div>
               </div>
             </div>
@@ -289,7 +289,7 @@ const ProductList = () => {
                   />
                 </div>
                 <div className="text-body leading-6">
-                  <label htmlFor={"subcategory_"+index} className="font-body text-tertiary text-sm">{subcategory}</label>
+                  <label htmlFor={"subcategory_"+index} className="font-body text-tertiary text-sm">{t(subcategory)}</label>
                 </div>
               </div>
             </div>
@@ -309,7 +309,7 @@ const ProductList = () => {
                   />
                 </div>
                 <div className="text-body leading-6">
-                  <label htmlFor={"label_"+index} className="font-body text-tertiary text-sm">{label}</label>
+                  <label htmlFor={"label_"+index} className="font-body text-tertiary text-sm">{t(label)}</label>
                 </div>
               </div>
             </div>

@@ -1,10 +1,10 @@
-import { FC, useState, Fragment} from 'react';
+import { FC, useState, Fragment, useEffect} from 'react';
 import {BrandLogo,Logo,USAFLAG, PERUFLAG} from '../assets/images';
-import { Menu as MenuIcon, X, Search, ChevronDown } from 'lucide-react';
+import { Menu as MenuIcon, X, Search, ChevronDown, ExternalLink } from 'lucide-react';
 import { Dialog } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
 import { Menu, Transition } from '@headlessui/react'
-import { LANGUAGES } from '../assets/data';
+import { LANGUAGES,SEARCH } from '../assets/data';
 
 interface INavigation {
   name: string;
@@ -31,6 +31,25 @@ const Navbar: FC = () => {
   const changeLang = (value:string) => {
         i18n.changeLanguage(value)
     }
+
+  const [listSearched,setListSearched] = useState<any[]>([])
+  const [searchedValue, setSearchedValue] = useState<string>("");
+
+  const handleChange = (event:any) => {
+    const { target } = event;
+    const { value } = target;
+
+    setSearchedValue(value);
+
+  };
+
+  useEffect(()=>{
+    if(searchedValue.length > 0){
+      // @ts-ignore
+      const listFiltered = SEARCH[i18n.language].filter((search:any) => search.label.toLowerCase().includes(searchedValue.toLowerCase()));
+      setListSearched(listFiltered);
+    }
+  },[searchedValue])
 
   return(
     <div className="fixed top-0 h-[50px] sm:h-[120px] w-full z-10 bg-white drop-shadow-lg">
@@ -112,11 +131,25 @@ const Navbar: FC = () => {
           <div className="relative w-[300px] sm:w-1/4">
             <input
               type="text"
+              value={searchedValue}
+              onChange={handleChange}
               className="w-full p-2 pl-10 rounded-lg border bg-white text-secondary focus:outline-none"
               placeholder={t("Busqueda")}
             />
             <div className="absolute left-3 top-2 text-primary">
               <Search />
+            </div>
+            <div className={`${searchedValue.length > 0 && listSearched.length > 0 ? 'block opacity-100 h-auto' : 'hidden opacity-0 h-[0px]'} absolute top-[50px] left-0 w-[300px] sm:w-full border-2 bg-white transition-opacity ease-in-out duration-300 `}>
+              <div className='h-auto w-full cursor-pointer px-2 py-1'>
+                {listSearched.map((SearchedOutput,index:any) => (
+                  <a href={SearchedOutput.route} key={"tag_"+index} className="flex flex-row justify-between text-primary w-full h-full hover:bg-slate-100 hover:underline z-[20]">{t(SearchedOutput.label)} <ExternalLink/> </a>
+                ))}
+              </div>
+            </div>
+            <div className={`${searchedValue.length > 0 && listSearched.length == 0 ? 'block opacity-100 h-auto' : 'hidden opacity-0 h-[0px]'} absolute top-[50px] left-0 w-[300px] sm:w-full border-2 bg-white transition-opacity ease-in-out duration-300 `}>
+              <div className='h-auto w-full hover:bg-slate-100 cursor-pointer px-2 py-1'>
+                  <span className="flex flex-row justify-between text-primary w-full hover:underline">{t("No hay resultados")}</span>
+              </div>
             </div>
           </div>
       </div>

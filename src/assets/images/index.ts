@@ -19,24 +19,24 @@ import About_3 from './test/about_3.jpg';
 
 
 import ProductTest1 from './test/products/image1.jpg';
-import ProductTest2 from './test/products/image2.jfif';
+import ProductTest2 from './test/products/image2.jpeg';
 import ProductTest3 from './test/products/image3.jpg';
-import ProductTest4 from './test/products/image4.jpg';
+import ProductTest4 from './test/products/image4.jfif';
 import ProductTest5 from './test/products/image5.jfif';
 import ProductTest6 from './test/products/image6.jfif';
-import ProductTest7 from './test/products/image7.jpg';
-import ProductTest8 from './test/products/image7.jpg';
-import ProductTest9 from './test/products/image9.jpeg';
+import ProductTest7 from './test/products/image7.webp';
+import ProductTest8 from './test/products/image8.jpg';
+import ProductTest9 from './test/products/image9.jpg';
 import ProductTest10 from './test/products/image10.jpg';
 import ProductTest11 from './test/products/image11.jpg';
 import ProductTest12 from './test/products/image12.jpg';
 import ProductTest13 from './test/products/image13.jpg';
-import ProductTest14 from './test/products/image14.png';
-import ProductTest15 from './test/products/image15.jfif';
+import ProductTest14 from './test/products/image14.jpg';
+import ProductTest15 from './test/products/image15.jpg';
+
 import ProductTest16 from './test/products/image16.jpg';
 import ProductTest17 from './test/products/image17.jpg';
-import ProductTest18 from './test/products/image18.jfif';
-import ProductTest19 from './test/products/image19.jfif';
+import ProductTest18 from './test/products/image18.jpg';
 import ProductTest20 from './test/products/image20.jfif';
 import ProductTest21 from './test/products/image21.jpg';
 import ProductTest22 from './test/products/image22.jfif';
@@ -44,7 +44,11 @@ import ProductTest23 from './test/products/image23.png';
 import ProductTest24 from './test/products/image24.jpg';
 import ProductTest25 from './test/products/image25.jfif';
 import ProductTest26 from './test/products/image26.jfif';
-
+import ProductTest28 from './test/products/image28.webp';
+import ProductTest29 from './test/products/image29.webp';
+import ProductTest30_1 from './test/products/image30.jpeg';
+import ProductTest30_2 from './test/products/image30_2.jpeg';
+import ProductTest31 from './test/products/image31.webp';
 
 export { 
   Logo,
@@ -72,7 +76,6 @@ export {
   ProductTest16,
   ProductTest17,
   ProductTest18,
-  ProductTest19,
   ProductTest20,
   ProductTest21,
   ProductTest22,
@@ -80,6 +83,11 @@ export {
   ProductTest24,
   ProductTest25,
   ProductTest26,
+  ProductTest28,
+  ProductTest29,
+  ProductTest30_1,
+  ProductTest30_2,
+  ProductTest31,
 
   Section_1,
   Section_2,

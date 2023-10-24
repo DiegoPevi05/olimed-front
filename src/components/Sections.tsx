@@ -35,9 +35,9 @@ const dataCards:CardProps[] = [
   },
   {
     title:"Materiales para Laboratorio",
-    subtitle:"Herramientas de precisión para investigadores y laboratorios de excelencia",
+    subtitle:"Proximamente",
     image: Section_4,
-    href:"/#products?category=3"
+    href:"/#products"
   },
 ]
 
